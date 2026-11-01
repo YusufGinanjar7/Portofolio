@@ -745,13 +745,16 @@
 
                 if (data.reply) {
                     appendMessage('bot', data.reply);
+                } else if (data.error) {
+                    // SEKARANG ERROR ASLINYA AKAN MUNCUL DI CHATBOT
+                    appendMessage('bot', '⚠️ Info Error: ' + data.error);
                 } else {
                     appendMessage('bot', 'Maaf, terjadi kesalahan saat menerima data AI.');
                 }
             } catch (err) {
                 const tempLoading = document.getElementById('temp-loading');
                 if (tempLoading) tempLoading.remove();
-                appendMessage('bot', 'Maaf, tidak dapat terhubung ke server AI.');
+                appendMessage('bot', 'Maaf, gagal melakukan fetch API.');
             }
         }
 

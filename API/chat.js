@@ -7,7 +7,7 @@ module.exports = async function handler(req, res) {
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
     if (!GEMINI_API_KEY) {
-        return res.status(500).json({ error: 'GEMINI_API_KEY belum terkonfigurasi di Vercel' });
+        return res.status(500).json({ error: 'Kunci GEMINI_API_KEY belum terbaca di Vercel.' });
     }
 
     const systemPrompt = `
@@ -36,13 +36,14 @@ module.exports = async function handler(req, res) {
 
         const data = await response.json();
         
-        if (data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
+        if (response.ok && data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
             const aiResponse = data.candidates[0].content.parts[0].text;
             return res.status(200).json({ reply: aiResponse });
         } else {
-            return res.status(500).json({ error: 'Respon dari model AI tidak valid' });
+            // MENANGKAP ERROR ASLI DARI GEMINI (Misal: API Key Invalid)
+            return res.status(500).json({ error: data.error?.message || 'Respon dari model AI tidak valid' });
         }
     } catch (error) {
-        return res.status(500).json({ error: 'Gagal terhubung ke server AI' });
+        return res.status(500).json({ error: error.message || 'Server gagal melakukan fetch ke Gemini' });
     }
 };
