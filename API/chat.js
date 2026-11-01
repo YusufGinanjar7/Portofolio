@@ -1,21 +1,26 @@
-export default async function handler(req, res) {
-    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+module.exports = async function handler(req, res) {
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Method not allowed' });
+    }
 
     const { userMessage } = req.body;
-    const GEMINI_API_KEY = process.env.GEMINI_API_KEY; // Disimpan aman di Vercel
+    const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
-    // Konteks CV kamu agar AI menjawab sesuai data dirimu saja
+    if (!GEMINI_API_KEY) {
+        return res.status(500).json({ error: 'GEMINI_API_KEY belum terkonfigurasi di Vercel' });
+    }
+
     const systemPrompt = `
-    Kamu adalah Asisten AI untuk portofolio kandidat S1 Teknik Informatika.
+    Kamu adalah Asisten AI untuk portofolio kandidat S1 Teknik Informatika UIN Sunan Gunung Djati Bandung.
     Data Kandidat:
-    - Fokus: Data Engineering, AI, Data Analytics.
-    - Skripsi: Deteksi Kerusakan CVT Motor Matic menggunakan Audio Spectrogram Transformer (AST) pada PyTorch.
-    - Proyek DBS: FloodSight (Prediksi Banjir CNN Hybrid dengan citra satelit Google Earth Engine + data tabular, Nilai: 87.8).
-    - Kompetisi: Gold Medal NICYMS (Riset Komputasional Pola Kata Al-Qur'an).
-    - Pengalaman Kerja: Live Streamer & Sales Makanan (komunikasi publik, pemahaman algoritma platform, target sales).
-    - Lokasi & Minat: Siap magang di wilayah Bandung, Bekasi, Karawang, Jakarta (termasuk otomotif/Toyota).
+    - Spesialisasi: Artificial Intelligence, Data Engineering, & Data Analytics.
+    - Skripsi: Klasifikasi Kerusakan Area CVT Sepeda Motor Matic Menggunakan Metode Audio Spectrogram Transformer (AST) pada PyTorch.
+    - Proyek DBS: FloodSight (Sistem Prediksi Banjir JABODETABEK berbasis CNN Hybrid dengan citra satelit Google Earth Engine + data tabular, Nilai akhir: 87.8).
+    - Kompetisi: Gold Medal NICYMS / ICYMS (Riset Komputasional Pola Kata Al-Qur'an).
+    - Pengalaman Kerja: Live Streamer & Sales Specialist (komunikasi publik, pemahaman algoritma platform, target sales).
+    - Pengalaman Riset: Pengambilan sampel data audio mesin mentah di lapangan secara mandiri.
 
-    Tugasmu: Jawab pertanyaan HR dengan ramah, profesional, ringkas (maksimal 3-4 kalimat), dan jujur berdasarkan data di atas. Jika ditanya hal di luar konteks ini, jawab bahwa kamu hanya fokus membantu memberikan informasi seputar kualifikasi kandidat.
+    Tugasmu: Jawab pertanyaan HR dengan ramah, profesional, ringkas (maksimal 3-4 kalimat), dan jujur berdasarkan data kandidat di atas. Jika ditanya hal di luar konteks ini, jawab bahwa kamu hanya fokus membantu memberikan informasi seputar kualifikasi kandidat.
     `;
 
     try {
@@ -30,10 +35,14 @@ export default async function handler(req, res) {
         });
 
         const data = await response.json();
-        const aiResponse = data.candidates[0].content.parts[0].text;
-
-        return res.status(200).json({ reply: aiResponse });
+        
+        if (data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
+            const aiResponse = data.candidates[0].content.parts[0].text;
+            return res.status(200).json({ reply: aiResponse });
+        } else {
+            return res.status(500).json({ error: 'Respon dari model AI tidak valid' });
+        }
     } catch (error) {
-        return res.status(500).json({ error: 'Gagal terhubung ke AI' });
+        return res.status(500).json({ error: 'Gagal terhubung ke server AI' });
     }
-}
+};
