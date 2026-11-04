@@ -14,9 +14,9 @@ module.exports = async function handler(req, res) {
     const FALLBACK_RESPONSE = `Halo! Saat ini sistem antrean AI sedang cukup padat. 
 
 Namun jangan khawatir, Anda tetap bisa menjelajahi portofolio Yusuf secara manual:
-• 🌊 **FloodSight**: Sistem AI & Geospasial untuk prediksi banjir JABODETABEK.
-• 🏍️ **Skripsi AST CVT**: Pemodelan Predictive Maintenance kerusakan CVT motor menggunakan Audio Spectrogram Transformer.
-• 🏅 **Riset NICYMS**: Penelitian NLP & Teori Informasi (Gold Medal Winner).
+• FloodSight : Sistem AI & Geospasial untuk prediksi banjir JABODETABEK.
+• Skripsi AST CVT : Pemodelan Predictive Maintenance kerusakan CVT motor menggunakan Audio Spectrogram Transformer.
+• Riset NICYMS : Penelitian NLP & Teori Informasi (Gold Medal Winner).
 
 Silakan coba sapa saya lagi dalam 2–3 menit, ya!`;
 
