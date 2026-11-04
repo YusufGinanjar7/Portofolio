@@ -110,16 +110,18 @@
     <nav class="glass-nav fixed top-0 left-0 right-0 z-40 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
+                <!-- Logo Kiri -->
                 <a href="#" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
                         <i class="fa-solid fa-brain"></i>
                     </div>
                     <div>
-                        <span class="font-extrabold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">AI & Data</span>
-                        <span class="block text-[10px] text-cyan-400 font-mono tracking-widest uppercase">Engineer</span>
+                        <span class="font-extrabold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">Yusuf Ginanjar</span>
+                        <span class="block text-[10px] text-cyan-400 font-mono tracking-widest uppercase">AI & Data Engineer</span>
                     </div>
                 </a>
 
+                <!-- Menu Navigasi Kanan (Hanya 2 Elemen Flex, Otomatis Rapi di Kanan) -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                     <a href="#about" class="text-slate-300 hover:text-cyan-400 transition-colors">Tentang Saya</a>
                     <a href="#skills" class="text-slate-300 hover:text-cyan-400 transition-colors">Keahlian</a>
@@ -128,69 +130,130 @@
                     <a href="#experience" class="text-slate-300 hover:text-cyan-400 transition-colors">Pengalaman</a>
                 </div>
 
-                <div class="hidden md:flex items-center gap-4">
-                    <button onclick="openModal('cvModal')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-medium text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5">
-                        <i class="fa-solid fa-file-arrow-down mr-2"></i>Unduh Profil / CV
-                    </button>
-                </div>
-
+                <!-- Tombol Mobile Hamburger -->
                 <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
             <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Tentang Saya</a>
             <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Keahlian</a>
             <a href="#projects" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Proyek Utama</a>
             <a href="#achievements" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Prestasi</a>
             <a href="#experience" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">Pengalaman</a>
-            <button onclick="openModal('cvModal')" class="w-full text-left px-3 py-2.5 rounded-lg bg-cyan-500/20 text-cyan-300 font-medium">
-                <i class="fa-solid fa-file-arrow-down mr-2"></i>Unduh Ringkasan CV
-            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="absolute top-1/3 right-10 w-80 h-80 bg-indigo-500/15 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                    AI & Data Engineering <br>
-                    <span class="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent text-glow">Specialist</span>
-                </h1>
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <!-- KIRI: Perkenalan & Teks Utama (7 Kolom) -->
+                <div class="md:col-span-7 space-y-6">
+                    <!-- Badge Perkenalan -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>Halo, Saya Yusuf Ginanjar 👋</span>
+                    </div>
 
-                <p class="text-lg sm:text-xl text-slate-300 font-light leading-relaxed mb-8">
-                    S1 Teknik Informatika UIN Sunan Gunung Djati Bandung. Berfokus pada pemodelan <span class="text-cyan-300 font-medium">Deep Learning</span> dan pemrosesan data multi-modal berskala industri.
-                </p>
+                    <!-- Judul Utama -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        AI & Data Engineering <br>
+                        <span class="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent text-glow">Specialist</span>
+                    </h1>
 
-                <div class="flex flex-wrap items-center gap-4 mb-12">
-                    <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
-                        <i class="fa-solid fa-rocket text-xs"></i> Lihat Proyek Unggulan
-                    </a>
-                    <a href="#contact" class="px-6 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm transition-all border border-slate-700/60 flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane text-xs text-cyan-400"></i> Hubungi Saya
-                    </a>
+                    <p class="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+                        Lulusan S1 Teknik Informatika UIN Sunan Gunung Djati Bandung. Berfokus pada pemodelan <span class="text-cyan-300 font-medium">Deep Learning</span> dan pemrosesan data multi-modal berskala industri.
+                    </p>
+
+                    <!-- Tombol Aksi -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-solid fa-rocket text-xs"></i> Lihat Proyek Unggulan
+                        </a>
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm transition-all border border-slate-700/60 flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-xs text-cyan-400"></i> Hubungi Saya
+                        </a>
+                    </div>
+
+                    <!-- Stat Cards (Interactive Modal Trigger) -->
+                    <div class="grid grid-cols-3 gap-3 border-t border-slate-800/80 pt-6">
+                        <!-- Card DBS -->
+                        <div onclick="openCertModal('dbs')" class="glass-card p-3.5 rounded-2xl border-slate-800 cursor-pointer hover:border-cyan-500/50 hover:scale-[1.02] transition-all group">
+                            <div class="text-cyan-400 text-xl font-bold font-mono group-hover:text-cyan-300">87.8 / 100</div>
+                            <div class="text-[11px] text-slate-400 mt-0.5 flex items-center justify-between">
+                                <span>DBS Graduate</span>
+                                <i class="fa-solid fa-expand text-[9px] text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card NICYMS -->
+                        <div onclick="openCertModal('nicyms')" class="glass-card p-3.5 rounded-2xl border-slate-800 cursor-pointer hover:border-indigo-500/50 hover:scale-[1.02] transition-all group">
+                            <div class="text-indigo-400 text-xl font-bold font-mono group-hover:text-indigo-300">Gold Medal</div>
+                            <div class="text-[11px] text-slate-400 mt-0.5 flex items-center justify-between">
+                                <span>NICYMS</span>
+                                <i class="fa-solid fa-expand text-[9px] text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card AST & CNN (Direct Link ke Live Demo) -->
+                        <a href="https://app-deteksi-cvt-ast.vercel.app/" target="_blank" rel="noopener noreferrer" class="glass-card p-3.5 rounded-2xl border-slate-800 cursor-pointer hover:border-purple-500/50 hover:scale-[1.02] transition-all group block">
+                            <div class="text-purple-400 text-xl font-bold font-mono group-hover:text-purple-300 flex items-center justify-between">
+                                <span>AST & CNN</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                            <div class="text-[11px] text-slate-400 mt-0.5">AI Models (Live Demo)</div>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-slate-800/80 pt-8">
-                    <div class="glass-card p-4 rounded-2xl border-slate-800">
-                        <div class="text-cyan-400 text-2xl font-bold font-mono">87.8 / 100</div>
-                        <div class="text-xs text-slate-400 mt-1">DBS Tech Graduate</div>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl border-slate-800">
-                        <div class="text-indigo-400 text-2xl font-bold font-mono">Gold Medal</div>
-                        <div class="text-xs text-slate-400 mt-1">ICYMS / NICYMS Winner</div>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl border-slate-800 col-span-2 sm:col-span-1">
-                        <div class="text-purple-400 text-2xl font-bold font-mono">AST & CNN</div>
-                        <div class="text-xs text-slate-400 mt-1">Audio & Vision AI Models</div>
+                <!-- Modal Display Sertifikat -->
+                <div id="certModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md transition-all">
+                    <div class="glass-card max-w-3xl w-full p-6 rounded-3xl border-slate-700 relative flex flex-col items-center">
+                        <!-- Tombol Close -->
+                        <button onclick="closeModal('certModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl z-10 w-8 h-8 rounded-full bg-slate-800/80 flex items-center justify-center">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                        <!-- Judul Sertifikat -->
+                        <h3 id="cert-title" class="font-bold text-white text-base md:text-lg mb-4 text-center">Pratinjau Sertifikat</h3>
+
+                        <!-- Container Gambar Sertifikat (Mendukung Multi-Page Scroll) -->
+                        <div id="cert-img-container" class="w-full max-h-[70vh] overflow-y-auto rounded-2xl border border-slate-800 bg-slate-950 p-3 space-y-4">
+                            <!-- Gambar Halaman 1 & 2 akan di-render otomatis oleh JS di sini -->
+                        </div>
+
+                        <!-- Tombol Akses PDF Asli -->
+                        <div class="mt-5 flex gap-3 w-full justify-end">
+                            <a id="cert-pdf-link" href="#" target="_blank" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-medium text-xs shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+                                <i class="fa-solid fa-file-pdf"></i> Buka / Unduh File PDF Asli
+                            </a>
+                            <button onclick="closeModal('certModal')" class="px-4 py-2.5 rounded-xl bg-slate-800 text-slate-300 text-xs hover:bg-slate-700">Tutup</button>
+                        </div>
                     </div>
                 </div>
+
+                <!-- KANAN: Foto Profil Kamu (5 Kolom) -->
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Glow effect belakang foto -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-indigo-600 rounded-3xl blur-2xl opacity-30 transform rotate-6 scale-95"></div>
+                        
+                        <!-- Frame Foto Glassmorphism -->
+                        <div class="glass-card p-3 rounded-3xl border border-slate-700/60 relative z-10 shadow-2xl">
+                            <!-- Foto profil lokal kamu -->
+                            <img src="asset/foto profil.png" alt="Yusuf Ginanjar" class="w-full h-80 sm:h-96 object-cover rounded-2xl border border-slate-800">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -198,23 +261,28 @@
     <!-- About Me Section -->
     <section id="about" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header Section yang Lebih Friendly & Asik -->
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold font-mono uppercase tracking-widest text-cyan-400 mb-2">PROFIL PROFESSIONAL</h2>
-                <p class="text-3xl font-extrabold text-white">Mengkombinasikan Ekspertise Teknis & Ketahanan Komunikasi</p>
+                <h2 class="text-xs font-bold font-mono uppercase tracking-widest text-cyan-400 mb-2">TENTANG SAYA</h2>
+                <p class="text-3xl font-extrabold text-white">Menjembatani Dunia AI & Data dengan Komunikasi Nyata</p>
             </div>
 
             <div class="grid md:grid-cols-12 gap-8 items-center">
+                <!-- Kolom Kiri: Card Identitas dengan Foto -->
                 <div class="md:col-span-5">
                     <div class="glass-card p-6 rounded-3xl relative overflow-hidden group">
                         <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-transparent to-indigo-500/10 opacity-50 group-hover:opacity-100 transition-opacity"></div>
                         <div class="relative z-10 flex flex-col items-center text-center">
-                            <div class="w-28 h-28 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 p-1 mb-6 shadow-xl shadow-cyan-500/20">
-                                <div class="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center text-white text-4xl">
-                                    <i class="fa-solid fa-user-gear text-cyan-400"></i>
+                            
+                            <!-- Avatar Foto Diri "Desain Tanpa Judul.jpg" -->
+                            <div class="w-28 h-28 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 p-1 mb-6 shadow-xl shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                                <div class="w-full h-full bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center">
+                                    <img src="asset/Desain Tanpa Judul.jpg" alt="Yusuf Ginanjar" class="w-full h-full object-cover">
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-1">Informatika UIN Bandung</h3>
-                            <p class="text-xs text-cyan-400 font-mono mb-4">S1 Teknik Informatika • AI & Data Specialist</p>
+
+                            <h3 class="text-xl font-bold text-white mb-1">Yusuf Ginanjar</h3>
+                            <p class="text-xs text-cyan-400 font-mono mb-4">S1 Teknik Informatika UIN Bandung • AI & Data Specialist</p>
                             
                             <div class="w-full space-y-2 text-left text-xs text-slate-300 border-t border-slate-800 pt-4">
                                 <div class="flex justify-between py-1 border-b border-slate-800/50">
@@ -223,24 +291,25 @@
                                 </div>
                                 <div class="flex justify-between py-1 border-b border-slate-800/50">
                                     <span class="text-slate-400">Pengalaman Lapangan:</span>
-                                    <span class="font-medium text-white">Dataset Collector & Streamer</span>
+                                    <span class="font-medium text-white">Dataset Collector & Live Streamer</span>
                                 </div>
                                 <div class="flex justify-between py-1">
                                     <span class="text-slate-400">Target Karir:</span>
-                                    <span class="font-medium text-cyan-300">MagangHub Batch 3 / Industrial AI</span>
+                                    <span class="font-medium text-cyan-300">Machine Learning Engineer</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Kolom Kanan: Narasi Perkenalan & Highlight Skillset -->
                 <div class="md:col-span-7 space-y-6">
                     <div class="glass-card p-8 rounded-3xl space-y-4 leading-relaxed">
                         <p class="text-slate-200 text-base">
-                            Saya adalah lulusan <strong class="text-white">S1 Teknik Informatika UIN Sunan Gunung Djati Bandung</strong> yang berfokus pada bidang <strong class="text-cyan-300">Data Engineering</strong> dan <strong class="text-indigo-300">Artificial Intelligence</strong>. Memiliki pemahaman kuat dalam membangun pemodelan Machine Learning (Deep Learning Audio & Vision) serta pengolahan data multi-modal.
+                            Saya adalah lulusan <strong class="text-white">S1 Teknik Informatika UIN Sunan Gunung Djati Bandung</strong> yang memiliki antusiasme tinggi di bidang <strong class="text-cyan-300">Data Engineering</strong> dan <strong class="text-indigo-300">Artificial Intelligence</strong>. Terbiasa merancang pemodelan Machine Learning (Deep Learning Audio & Computer Vision) serta mengolah *pipeline* data spasial maupun audio mentah dari lapangan.
                         </p>
                         <p class="text-slate-300 text-sm">
-                            Di samping latar belakang teknis yang solid, saya memiliki keunggulan kompetitif berupa pengalaman lapangan di bidang <strong class="text-white">Live Streaming Sales</strong> dan pengumpulan data sampel lapangan secara mandiri. Pengalaman ini membentuk ketahanan mental, adaptabilitas tinggi, serta kemampuan penyampaian konsep teknis kompleks kepada pemangku kepentingan non-teknis.
+                            Selain keahlian koding dan olah data, pengalaman saya di bidang <strong class="text-white">Live Streaming Sales</strong> serta pengambilan sampel data riset mandiri melatih kemampuan penyampaian ide teknis secara ringkas, adaptabilitas tinggi di lapangan, serta komunikasi yang persuasif.
                         </p>
                         
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800">
@@ -259,7 +328,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-xs font-bold text-white uppercase font-mono">Komunikasi Adaptif</h4>
-                                    <p class="text-xs text-slate-400">Pengalaman penjualan live streaming & riset lapangan</p>
+                                    <p class="text-xs text-slate-400">Pengalaman public speaking, live streamer & riset lapangan</p>
                                 </div>
                             </div>
                         </div>
@@ -277,15 +346,19 @@
                 <p class="text-3xl font-extrabold text-white">Stack Teknologi & Kompetensi</p>
             </div>
 
+            <!-- Tombol Filter Kategori -->
             <div class="flex flex-wrap justify-center gap-2 mb-10">
-                <button onclick="filterSkills('all')" class="skill-btn active px-4 py-2 rounded-xl text-xs font-semibold glass-card border-cyan-500/40 text-cyan-300">Semua Keahlian</button>
-                <button onclick="filterSkills('ai')" class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-slate-400 hover:text-white">AI & Deep Learning</button>
-                <button onclick="filterSkills('data')" class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-slate-400 hover:text-white">Data Engineering & DB</button>
-                <button onclick="filterSkills('soft')" class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-slate-400 hover:text-white">Soft Skills & Lapangan</button>
+                <button onclick="filterSkills('all', event)" class="skill-btn active px-4 py-2 rounded-xl text-xs font-semibold glass-card border-cyan-500/40 text-cyan-300">Semua Keahlian</button>
+                <button onclick="filterSkills('ai', event)" class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-slate-400 hover:text-white">AI & Deep Learning</button>
+                <button onclick="filterSkills('data', event)" class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-slate-400 hover:text-white">Data & Backend Dev</button>
+                <button onclick="filterSkills('soft', event)" class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-slate-400 hover:text-white">Soft Skills & Bahasa</button>
             </div>
 
+            <!-- Grid Kartu Keahlian -->
             <div id="skills-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="skill-card glass-card p-5 rounded-2xl" data-category="ai">
+                
+                <!-- 1. PyTorch & Librosa (AI) -->
+                <div class="skill-card glass-card p-5 rounded-2xl transition-all duration-300" data-category="ai">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-lg">
                             <i class="fa-solid fa-fire-flame-curved"></i>
@@ -303,32 +376,34 @@
                     </div>
                 </div>
 
-                <div class="skill-card glass-card p-5 rounded-2xl" data-category="ai">
+                <!-- 2. CNN & Computer Vision (AI) -->
+                <div class="skill-card glass-card p-5 rounded-2xl transition-all duration-300" data-category="ai">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg">
                             <i class="fa-solid fa-eye"></i>
                         </div>
                         <div>
                             <h3 class="font-bold text-white text-sm">CNN & Computer Vision</h3>
-                            <span class="text-[11px] text-slate-400">Vision & Satelit</span>
+                            <span class="text-[11px] text-slate-400">Vision & Deep Learning</span>
                         </div>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
-                        Model CNN Hybrid menggabungkan citra satelit Google Earth Engine dengan data tabular prediktif.
+                        Model CNN Hybrid memadukan pemrosesan citra spasial dengan analisis data tabular prediktif.
                     </p>
                     <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
                         <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-full w-[88%]"></div>
                     </div>
                 </div>
 
-                <div class="skill-card glass-card p-5 rounded-2xl" data-category="data">
+                <!-- 3. Python & SQL (Data) -->
+                <div class="skill-card glass-card p-5 rounded-2xl transition-all duration-300" data-category="data">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-lg">
                             <i class="fa-brands fa-python"></i>
                         </div>
                         <div>
                             <h3 class="font-bold text-white text-sm">Python & SQL</h3>
-                            <span class="text-[11px] text-slate-400">Data Wrangling</span>
+                            <span class="text-[11px] text-slate-400">Data Wrangling & Pipeline</span>
                         </div>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
@@ -339,25 +414,46 @@
                     </div>
                 </div>
 
-                <div class="skill-card glass-card p-5 rounded-2xl" data-category="data">
+                <!-- 4. PHP (Data / Dev - BARU: 50%) -->
+                <div class="skill-card glass-card p-5 rounded-2xl transition-all duration-300" data-category="data">
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg">
-                            <i class="fa-solid fa-earth-americas"></i>
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg">
+                            <i class="fa-brands fa-php"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-white text-sm">Google Earth Engine</h3>
-                            <span class="text-[11px] text-slate-400">Spatial Analytics</span>
+                            <h3 class="font-bold text-white text-sm">PHP</h3>
+                            <span class="text-[11px] text-slate-400">Backend Development</span>
                         </div>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
-                        Ekstraksi citra satelit spasial untuk pemantauan lingkungan dan estimasi parameter geografis.
+                        Pemrograman server-side untuk pemrosesan logika web, pengolahan database, dan integrasi komponen backend.
                     </p>
                     <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full w-[80%]"></div>
+                        <div class="bg-gradient-to-r from-indigo-500 to-purple-400 h-full w-[50%]"></div>
                     </div>
                 </div>
 
-                <div class="skill-card glass-card p-5 rounded-2xl" data-category="soft">
+                <!-- 5. Laravel Framework (Data / Dev - BARU: 50%) -->
+                <div class="skill-card glass-card p-5 rounded-2xl transition-all duration-300" data-category="data">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 text-lg">
+                            <i class="fa-brands fa-laravel"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Laravel Framework</h3>
+                            <span class="text-[11px] text-slate-400">MVC Web Framework</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        Pengembangan arsitektur web terstruktur menggunakan pola MVC, Eloquent ORM, dan pembuatan RESTful API.
+                    </p>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-red-500 to-orange-400 h-full w-[50%]"></div>
+                    </div>
+                </div>
+
+                <!-- 6. Komunikasi & Live Streaming (Soft) -->
+                <div class="skill-card glass-card p-5 rounded-2xl transition-all duration-300" data-category="soft">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 text-lg">
                             <i class="fa-solid fa-bullhorn"></i>
@@ -375,23 +471,25 @@
                     </div>
                 </div>
 
-                <div class="skill-card glass-card p-5 rounded-2xl" data-category="soft">
+                <!-- 7. Bahasa Inggris (Soft - BARU: 45%) -->
+                <div class="skill-card glass-card p-5 rounded-2xl transition-all duration-300" data-category="soft">
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 text-lg">
-                            <i class="fa-solid fa-microchip"></i>
+                        <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-lg">
+                            <i class="fa-solid fa-language"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-white text-sm">Pengambilan Data Lapangan</h3>
-                            <span class="text-[11px] text-slate-400">Primary Dataset Research</span>
+                            <h3 class="font-bold text-white text-sm">Bahasa Inggris</h3>
+                            <span class="text-[11px] text-slate-400">Proficiency (TOEFA Score: 467)</span>
                         </div>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
-                        Perekaman data audio mesin mentah di lokasi kerja nyata & prapemrosesan dataset spesifik skripsi.
+                        Pemahaman jurnal/literatur riset AI internasional, membaca dokumentasi teknis, dan komunikasi kerja dasar.
                     </p>
                     <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                        <div class="bg-gradient-to-r from-yellow-500 to-amber-400 h-full w-[90%]"></div>
+                        <div class="bg-gradient-to-r from-sky-500 to-cyan-400 h-full w-[45%]"></div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -437,25 +535,30 @@
                         </div>
                     </div>
 
-                    <div class="p-6 pt-0 border-t border-slate-800/40 mt-4">
-                        <button onclick="openProjectModal('project1')" class="w-full mt-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyan-500 hover:text-white text-slate-300 text-xs font-semibold transition-all border border-slate-700/50 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-circle-info"></i> Detail Arsitektur Proyek
+                    <div class="p-6 pt-0 border-t border-slate-800/40 mt-4 flex gap-2">
+                        <!-- Tombol Live Demo -->
+                        <a href="https://app-deteksi-cvt-ast.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-lg shadow-purple-500/20">
+                            <i class="fa-solid fa-external-link text-[10px]"></i> Coba Demo Web
+                        </a>
+                        <!-- Tombol Detail Arsitektur -->
+                        <button onclick="openProjectModal('project1')" class="px-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyan-500 hover:text-white text-slate-300 text-xs font-semibold transition-all border border-slate-700/50 flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-circle-info"></i> Detail
                         </button>
                     </div>
                 </div>
 
-                <!-- Project 2: FloodSight DBS -->
+                <!-- Project 2: FloodSight DBS Capstone -->
                 <div class="project-card glass-card rounded-3xl overflow-hidden flex flex-col justify-between group" data-category="ai">
                     <div>
                         <div class="h-48 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 relative p-6 flex flex-col justify-between border-b border-slate-800 overflow-hidden">
                             <div class="absolute -right-4 -bottom-4 text-indigo-500/10 text-9xl font-mono font-bold select-none">CNN</div>
                             <div class="flex justify-between items-center relative z-10">
-                                <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-[11px] font-mono border border-indigo-500/30">DBS Capstone / Vision</span>
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-[11px] font-mono border border-indigo-500/30">DBS Capstone / ML Engineer</span>
                                 <i class="fa-solid fa-cloud-showers-heavy text-indigo-400 text-lg"></i>
                             </div>
                             <div class="relative z-10">
                                 <h3 class="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">FloodSight Prediction System</h3>
-                                <p class="text-xs text-slate-400">CNN Hybrid Multi-Modal Model</p>
+                                <p class="text-xs text-slate-400">CNN Hybrid Multi-Modal Model (Score: 87.8)</p>
                             </div>
                         </div>
 
@@ -465,18 +568,27 @@
                             </p>
                             
                             <div class="flex flex-wrap gap-1.5 pt-2">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[10px] text-indigo-300 font-mono">TensorFlow</span>
                                 <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[10px] text-slate-300 font-mono">CNN Hybrid</span>
                                 <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[10px] text-slate-300 font-mono">Google Earth Engine</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[10px] text-slate-300 font-mono">TensorFlow</span>
-                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[10px] text-slate-300 font-mono">React / Node</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[10px] text-slate-300 font-mono">React / Hapi.js</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6 pt-0 border-t border-slate-800/40 mt-4">
-                        <button onclick="openProjectModal('project2')" class="w-full mt-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-indigo-500 hover:text-white text-slate-300 text-xs font-semibold transition-all border border-slate-700/50 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-circle-info"></i> Detail Arsitektur Proyek
-                        </button>
+                    <!-- Tombol Aksi Lengkap: Demo Web, GitHub Repo, dan Detail Modal -->
+                    <div class="p-6 pt-0 border-t border-slate-800/40 mt-4 space-y-2">
+                        <a href="https://fe-flood-sight.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20">
+                            <i class="fa-solid fa-globe text-[11px]"></i> Buka Live Demo Web
+                        </a>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/FloodSight" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700/60 flex items-center justify-center gap-1.5">
+                                <i class="fa-brands fa-github text-sm"></i> GitHub Repo
+                            </a>
+                            <button onclick="openProjectModal('project2')" class="flex-1 py-2 rounded-xl bg-slate-800/90 hover:bg-indigo-500 hover:text-white text-slate-300 text-xs font-semibold transition-all border border-slate-700/60 flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-circle-info text-xs"></i> Detail Arsitektur
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -499,8 +611,8 @@
                             <i class="fa-solid fa-trophy"></i>
                         </div>
                         <div class="space-y-2">
-                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 text-[11px] font-mono border border-amber-500/20">Kompetisi Ilmiah Nasional / Internasional</span>
-                            <h3 class="text-xl font-bold text-white">Gold Medal Winner - NICYMS / ICYMS</h3>
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 text-[11px] font-mono border border-amber-500/20">Kompetisi Ilmiah Nasional</span>
+                            <h3 class="text-xl font-bold text-white">Gold Medal Winner - NICYMS (National Invention Competition for Young Moslem Scientists)</h3>
                             <p class="text-xs text-slate-300 leading-relaxed">
                                 Meraih Medali Emas melalui penelitian komputasional bertajuk <em>"Analisis Pola Kata dan Bukti Ilmiah dalam Al-Qur'an dengan Pendekatan Komputasional"</em>.
                             </p>
@@ -580,30 +692,140 @@
     </section>
 
     <!-- Contact & Footer -->
+    <!-- Contact Section & Footer -->
     <section id="contact" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card p-8 md:p-12 rounded-3xl border-cyan-500/30 relative overflow-hidden">
-                <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="glass-card p-8 md:p-12 rounded-3xl border-cyan-500/30 relative overflow-hidden shadow-2xl">
+                <!-- Ambient Glow Effect -->
+                <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid md:grid-cols-12 gap-8 items-center relative z-10">
                     <div class="md:col-span-7 space-y-4">
                         <span class="text-xs font-bold font-mono uppercase tracking-widest text-cyan-400">SIAP BERKOLABORASI</span>
-                        <h2 class="text-3xl font-extrabold text-white">Tertarik Menghubungi atau Mengundang Diskusi?</h2>
+                        <h2 class="text-3xl font-extrabold text-white leading-tight">Tertarik Menghubungi atau Mengundang Diskusi?</h2>
                         <p class="text-sm text-slate-300 leading-relaxed">
-                            Saya sangat terbuka untuk posisi pemagangan <strong class="text-white">MagangHub Batch 3 Kemnaker</strong> maupun peran <strong class="text-cyan-300">Data Engineer / AI Specialist</strong>.
+                            Saya sangat terbuka untuk posisi pemagangan <strong class="text-white">MagangHub Batch 3 Kemnaker</strong> maupun peran industri sebagai <strong class="text-cyan-300">Data Engineer / AI Specialist</strong>.
                         </p>
                     </div>
 
-                    <div class="md:col-span-5 flex flex-col items-center justify-center p-6 bg-slate-950/60 rounded-2xl border border-slate-800 text-center space-y-4">
-                        <button onclick="openModal('cvModal')" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-xs shadow-lg shadow-cyan-500/20 transition-all">
-                            <i class="fa-solid fa-address-card mr-2"></i>Lihat Lembar Informasi Kontak
+                    <div class="md:col-span-5 flex flex-col items-center justify-center p-6 bg-slate-950/70 rounded-2xl border border-slate-800 text-center space-y-4">
+                        <button onclick="openModal('cvModal')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-xs shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-address-card text-sm"></i> Lihat Lembar Informasi Kontak
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="mt-16 text-center text-xs text-slate-400 font-mono">
-                <p>© 2026 AI & Data Engineering Portfolio. S1 Teknik Informatika UIN Sunan Gunung Djati Bandung.</p>
+
+            <!-- Footer Bottom -->
+            <div class="mt-16 text-center text-xs text-slate-500 font-mono space-y-1">
+                <p>© 2026 Yusuf Ginanjar, S.T. • AI & Data Engineering Portfolio</p>
+                <p class="text-[11px] text-slate-600">S1 Teknik Informatika UIN Sunan Gunung Djati Bandung</p>
             </div>
         </div>
     </section>
+
+    <!-- MODAL POPUP LEMBAR INFORMASI KONTAK LENGKAP -->
+    <div id="cvModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md transition-all">
+        <div class="glass-card max-w-lg w-full p-6 md:p-8 rounded-3xl border-slate-700 relative shadow-2xl">
+            <!-- Tombol Close -->
+            <button onclick="closeModal('cvModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl w-8 h-8 rounded-full bg-slate-800/80 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Header Modal -->
+            <div class="border-b border-slate-800 pb-4 mb-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Terbuka untuk Peluang Kerja</span>
+                </div>
+                <h3 class="font-bold text-white text-xl">Informasi Kontak & Saluran Diskusi</h3>
+                <p class="text-xs text-slate-400 mt-1">Yusuf Ginanjar, S.T. • AI & Data Specialist</p>
+            </div>
+
+            <!-- List Kontak Lengkap (Domisili, HP, Email, LinkedIn, GitHub) -->
+            <div class="space-y-3">
+                <!-- 1. Email -->
+                <div class="glass-card p-3.5 rounded-2xl border-slate-800 flex items-center justify-between group hover:border-cyan-500/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-slate-400 font-mono uppercase block">Email Resmi</span>
+                            <a href="mailto:yusufginanjar773@gmail.com" class="text-xs font-semibold text-white hover:text-cyan-300 transition-colors">yusufginanjar773@gmail.com</a>
+                        </div>
+                    </div>
+                    <button onclick="copyToClipboard('yusufginanjar773@gmail.com', 'Email berhasil disalin!')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-white text-slate-300 text-xs font-mono transition-all">
+                        <i class="fa-regular fa-copy mr-1"></i>Salin
+                    </button>
+                </div>
+
+                <!-- 2. WhatsApp / No. HP -->
+                <div class="glass-card p-3.5 rounded-2xl border-slate-800 flex items-center justify-between group hover:border-emerald-500/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-slate-400 font-mono uppercase block">WhatsApp / No. HP</span>
+                            <a href="https://wa.me/6289660261975" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white hover:text-emerald-300 transition-colors">+62 896-6026-1975</a>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6289660261975" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500 hover:text-white text-xs font-mono transition-all">
+                        <i class="fa-solid fa-paper-plane mr-1"></i>Chat
+                    </a>
+                </div>
+
+                <!-- 3. LinkedIn -->
+                <div class="glass-card p-3.5 rounded-2xl border-slate-800 flex items-center justify-between group hover:border-blue-500/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-slate-400 font-mono uppercase block">LinkedIn Profile</span>
+                            <span class="text-xs font-semibold text-white">Yusuf Ginanjar</span>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/yusuf-ginanjar-732a31308/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-300 text-xs font-mono transition-all">
+                        <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Buka
+                    </a>
+                </div>
+
+                <!-- 4. GitHub -->
+                <div class="glass-card p-3.5 rounded-2xl border-slate-800 flex items-center justify-between group hover:border-purple-500/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-slate-400 font-mono uppercase block">GitHub Repository</span>
+                            <span class="text-xs font-semibold text-white">YusufGinanjar7</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/YusufGinanjar7" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600 hover:text-white text-slate-300 text-xs font-mono transition-all">
+                        <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>Buka
+                    </a>
+                </div>
+
+                <!-- 5. Domisili -->
+                <div class="glass-card p-3.5 rounded-2xl border-slate-800 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-400 font-mono uppercase block">Domisili</span>
+                        <span class="text-xs font-semibold text-white">Bandung, Jawa Barat, Indonesia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Modal -->
+            <div class="mt-6 pt-4 border-t border-slate-800 flex justify-end">
+                <button onclick="closeModal('cvModal')" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium">Tutup</button>
+            </div>
+        </div>
+    </div>
 
     <!-- FLOATING CHATBOT WIDGET UI (DILENGKAPI TOMBOL MELAYANG) -->
     <div class="fixed bottom-6 right-6 z-50">
@@ -672,28 +894,131 @@
         const projectDetails = {
             project1: {
                 title: "CVT Sound Damage Classifier",
-                category: "AI & Audio Deep Learning",
-                description: "Skripsi S1 Teknik Informatika mengolah sinyal audio suara mesin motor matic menjadi mel-spectrogram menggunakan Audio Spectrogram Transformer (AST).",
+                category: "Skripsi S1 Teknik Informatika",
+                description: "Deteksi dan klasifikasi tingkat kerusakan area CVT sepeda motor matic (Normal, Ringan, Berat) berbasis rekaman suara mesin mentah yang diolah menjadi citra mel-spectrogram menggunakan arsitektur Audio Spectrogram Transformer (AST).",
                 highlights: [
-                    "Pengambilan dataset audio primer langsung di lapangan.",
-                    "Prapemrosesan audio menggunakan Librosa.",
-                    "Menggunakan Audio Spectrogram Transformer (AST).",
-                    "Akurasi seimbang pada seluruh kategori kerusakan (normal, ringan, berat)."
+                    "Pengambilan dataset audio primer langsung di lokasi kerja/bengkel secara mandiri.",
+                    "Prapemrosesan sinyal audio & ekstraksi spektrogram menggunakan Librosa.",
+                    "Pelatihan model Audio Spectrogram Transformer (AST) pada PyTorch.",
+                    "Akurasi tinggi dan seimbang pada seluruh kelas kerusakan."
                 ],
-                techStack: ["PyTorch", "Librosa", "Audio Spectrogram Transformer", "Python"]
+                techStack: ["PyTorch", "Librosa", "Audio Spectrogram Transformer", "Python"],
+                demoUrl: "https://app-deteksi-cvt-ast.vercel.app/"
             },
             project2: {
-                title: "FloodSight - Multi-Modal Flood Prediction",
-                category: "DBS Foundation Capstone Project",
-                description: "Sistem prediksi banjir JABODETABEK memadukan citra satelit Google Earth Engine dengan data tabular lingkungan.",
-                highlights: [
-                    "Nilai akhir program DBS Foundation: 87.8 / 100.",
-                    "Arsitektur CNN Hybrid untuk integrasi data spasial dan tabular.",
-                    "Integrasi API Google Earth Engine."
+                title: "Flood-Sight: Model Prediksi Banjir Multimodal",
+                category: "DBS Foundation Tech Graduate Capstone Project (Score: 87.8 / 100)",
+                description: "Model deep learning hibrida multimodal yang mengintegrasikan data tabular lingkungan/meteorologi terstruktur dengan citra satelit spasial (.tif RGB) untuk memprediksi risiko kejadian banjir proaktif di bulan berikutnya (Time-Series Forecasting).",
+                metrics: {
+                    accuracy: "99%",
+                    precision: "0.99",
+                    recall: "0.96",
+                    f1Score: "0.98",
+                    testSamples: "1,750 Data Uji (Tahun 2024)"
+                },
+                roleHighlights: [
+                    "Data Engineering & Preprocessing: Penanganan outlier dengan Winsorization, penskalaan StandardScaler, One-Hot Encoding (landcover_class), serta balancing data banjir & non-banjir via Undersampling.",
+                    "Integrasi Multimodal: Menghubungkan data tabular lingkungan (curah hujan, suhu, elevasi, kemiringan, kelembaban tanah, NDVI, koordinat) dengan citra satelit .tif via ID map_image.",
+                    "Eksperimentasi & Model Training: Membangun arsitektur hibrida CNN (3 blok Conv2D + BatchNormalization + MaxPooling2D + GlobalAveragePooling2D) & MLP Dense 64 yang digabungkan lewat Concatenate Layer.",
+                    "Optimasi & Artifacts: Memasang Callbacks (EarlyStopping, ReduceLROnPlateau, ModelCheckpoint) serta menyimpan artefak model final (flood-sight.keras & preprocessor.pkl)."
                 ],
-                techStack: ["TensorFlow", "CNN Hybrid", "Google Earth Engine", "React.js"]
+                highlights: [
+                    "Hasil Evaluasi Data Test 2024 (1,750 sampel): Accuracy 0.99, Precision 0.99, Recall 0.96, F1-Score 0.98.",
+                    "Optimizer & Loss: Adam Optimizer dengan Binary Crossentropy loss dan aktivasi Sigmoid untuk output biner.",
+                    "Penyimpanan Artefak: Model terlatih (`flood-sight.keras`) dan objek pipeline pemroses data (`preprocessor.pkl`)."
+                ],
+                techStack: ["TensorFlow / Keras", "Python", "Google Earth Engine API", "Pandas / NumPy", "Scikit-Learn", "Rasterio", "CNN + MLP Hybrid"],
+                demoUrl: "https://fe-flood-sight.vercel.app/",
+                githubUrl: "https://github.com/yusufginanjar7/capstone_ml"
             }
         };
+
+        function openProjectModal(key) {
+            const p = projectDetails[key];
+            if (!p) return;
+
+            let actionButtons = '';
+            if (p.demoUrl) {
+                actionButtons += `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow-lg shadow-indigo-500/20">
+                    <i class="fa-solid fa-globe"></i> Live Demo
+                </a>`;
+            }
+            if (p.githubUrl) {
+                actionButtons += `<a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-1.5">
+                    <i class="fa-brands fa-github"></i> Repository
+                </a>`;
+            }
+
+            // Blok Metrik Khusus Jika Ada (Seperti pada FloodSight)
+            const metricsBlock = p.metrics 
+                ? `<div class="grid grid-cols-4 gap-2 bg-slate-900/80 p-3 rounded-2xl border border-cyan-500/30 text-center">
+                    <div>
+                        <span class="block text-[10px] text-slate-400 font-mono">ACCURACY</span>
+                        <span class="text-sm font-bold text-cyan-400 font-mono">${p.metrics.accuracy}</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] text-slate-400 font-mono">PRECISION</span>
+                        <span class="text-sm font-bold text-indigo-400 font-mono">${p.metrics.precision}</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] text-slate-400 font-mono">RECALL</span>
+                        <span class="text-sm font-bold text-purple-400 font-mono">${p.metrics.recall}</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] text-slate-400 font-mono">F1-SCORE</span>
+                        <span class="text-sm font-bold text-emerald-400 font-mono">${p.metrics.f1Score}</span>
+                    </div>
+                </div>`
+                : '';
+
+            const roleBlock = p.roleHighlights 
+                ? `<div class="bg-indigo-950/40 p-4 rounded-2xl border border-indigo-500/30 space-y-2">
+                    <h4 class="font-bold text-cyan-300 uppercase text-[11px] font-mono flex items-center gap-2">
+                        <i class="fa-solid fa-microchip"></i> Detail Eksekusi & Data Engineering Yusuf:
+                    </h4>
+                    <ul class="list-disc list-inside space-y-1.5 text-slate-300 text-xs leading-relaxed">
+                        ${p.roleHighlights.map(r => `<li>${r}</li>`).join('')}
+                    </ul>
+                </div>`
+                : '';
+
+            const content = `
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+                    <div>
+                        <span class="text-[10px] font-mono text-cyan-400 uppercase">${p.category}</span>
+                        <h3 class="font-bold text-white text-xl">${p.title}</h3>
+                    </div>
+                </div>
+                <div class="space-y-4 text-xs text-slate-300">
+                    <p class="leading-relaxed text-sm">${p.description}</p>
+                    
+                    ${metricsBlock}
+                    ${roleBlock}
+
+                    <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-2">
+                        <h4 class="font-bold text-cyan-300 uppercase text-[11px] font-mono">Highlight Teknis & Arsitektur:</h4>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300">
+                            ${p.highlights.map(h => `<li>${h}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-400 uppercase text-[10px] font-mono mb-2">Tech Stack Utama:</h4>
+                        <div class="flex flex-wrap gap-1.5">
+                            ${p.techStack.map(t => `<span class="px-2.5 py-1 rounded-md bg-slate-800 text-[10px] text-cyan-300 font-mono">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
+                    <div class="flex gap-2">
+                        ${actionButtons}
+                    </div>
+                    <button onclick="closeModal('projectModal')" class="px-5 py-2 rounded-xl bg-slate-800 text-white text-xs hover:bg-slate-700">Tutup</button>
+                </div>
+            `;
+            document.getElementById('project-modal-content').innerHTML = content;
+            openModal('projectModal');
+        }
 
         const toggleBtn = document.getElementById('chat-toggle');
         const chatWindow = document.getElementById('chat-window');
@@ -707,6 +1032,52 @@
         }
         if (closeBtn && chatWindow) {
             closeBtn.addEventListener('click', () => chatWindow.classList.add('hidden'));
+        }
+
+        // Mapping Data Sertifikat (PNG untuk Tampilan, PDF untuk Unduhan Asli)
+        const certData = {
+            nicyms: {
+                title: "Gold Medal Winner - Riset Komputasional NICYMS",
+                images: [
+                    // Disesuaikan ke file .jpg sesuai lokasi file kamu
+                    "asset/sertif medali emas NICYMS.jpg"
+                ],
+                pdf: "asset/sertif medali emas NICYMS.pdf"    // Path file PDF asli kamu
+            },
+            dbs: {
+                title: "DBS Foundation Tech Graduate - AI & ML Track (Nilai: 87.8)",
+                // Array berisi 2 halaman JPG DBS
+                images: [
+                    "asset/_Coding Camp 2025_ Certificate _ MC222D5Y1662_page-0001.jpg",
+                    "asset/_Coding Camp 2025_ Certificate _ MC222D5Y1662_page-0002.jpg"
+                    ], 
+                // File PNG hasil konversi
+                pdf: "asset/-Coding Camp 2025- Certificate - MC222D5Y1662.pdf"    // Path file PDF asli kamu
+            }
+        };
+
+        function openCertModal(key) {
+            const cert = certData[key];
+            if (!cert) return;
+
+            // Set Judul & Link PDF Asli
+            document.getElementById('cert-title').innerText = cert.title;
+            document.getElementById('cert-pdf-link').href = cert.pdf;
+
+            // Container Gambar di Modal
+            const imgContainer = document.getElementById('cert-img-container');
+            imgContainer.innerHTML = ''; // Kosongkan isi container sebelumnya
+
+            // Loop untuk merender setiap halaman gambar (Halaman 1 & Halaman 2)
+            cert.images.forEach((imgSrc, index) => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imgSrc;
+                imgElement.alt = `${cert.title} - Halaman ${index + 1}`;
+                imgElement.className = "w-full h-auto object-contain rounded-xl shadow-lg border border-slate-800";
+                imgContainer.appendChild(imgElement);
+            });
+
+            openModal('certModal');
         }
 
         function appendMessage(sender, text) {
@@ -780,12 +1151,60 @@
             });
         }
 
+        function filterSkills(category, evt) {
+            // 1. Reset status visual tombol filter
+            const buttons = document.querySelectorAll('.skill-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'border-cyan-500/40', 'text-cyan-300');
+                btn.classList.add('text-slate-400');
+            });
+
+            // 2. Aktifkan style pada tombol yang diklik
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add('active', 'border-cyan-500/40', 'text-cyan-300');
+                evt.currentTarget.classList.remove('text-slate-400');
+            }
+
+            const cards = document.querySelectorAll('.skill-card');
+
+            // 3. Tahap 1: Fade out & Zoom out semua kartu
+            cards.forEach(card => {
+                card.classList.add('opacity-0', 'scale-95');
+                card.classList.remove('opacity-100', 'scale-100');
+            });
+
+            // 4. Tahap 2: Setelah animasi fade-out selesai (200ms), sembunyikan/tampilkan kartu yang sesuai
+            setTimeout(() => {
+                cards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (category === 'all' || cardCategory === category) {
+                        card.classList.remove('hidden');
+                        
+                        // Memicu reflow agar browser membaca perubahan display sebelum memunculkan animasi
+                        setTimeout(() => {
+                            card.classList.remove('opacity-0', 'scale-95');
+                            card.classList.add('opacity-100', 'scale-100');
+                        }, 30);
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            }, 200);
+        }
+
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
         function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
 
         function openProjectModal(key) {
             const p = projectDetails[key];
             if (!p) return;
+
+            const demoButton = p.demoUrl 
+                ? `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center gap-2">
+                    <i class="fa-solid fa-external-link"></i> Buka Aplikasi Web
+                </a>`
+                : '';
+
             const content = `
                 <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
                     <div>
@@ -802,7 +1221,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="pt-4 border-t border-slate-800 flex justify-end">
+                <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
+                    ${demoButton}
                     <button onclick="closeModal('projectModal')" class="px-5 py-2.5 rounded-xl bg-slate-800 text-white text-xs">Tutup</button>
                 </div>
             `;
@@ -813,6 +1233,26 @@
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+        
+        function copyToClipboard(text, customMessage) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toast-message');
+                
+                if (toast && toastMsg) {
+                    toastMsg.innerText = customMessage || 'Teks berhasil disalin!';
+                    toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+                    toast.classList.add('translate-y-0', 'opacity-100');
+
+                    setTimeout(() => {
+                        toast.classList.remove('translate-y-0', 'opacity-100');
+                        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                    }, 3000);
+                }
+            }).catch(err => {
+                console.error('Gagal menyalin teks: ', err);
+            });
+        }
     </script>
 </body>
 </html>
