@@ -10,6 +10,16 @@ module.exports = async function handler(req, res) {
         return res.status(500).json({ error: 'Kunci GEMINI_API_KEY belum terbaca di Vercel.' });
     }
 
+    // Pesan ramah saat API sibuk atau limit kuota
+    const FALLBACK_RESPONSE = `Halo! Saat ini sistem antrean AI sedang cukup padat. 
+
+Namun jangan khawatir, Anda tetap bisa menjelajahi portofolio Yusuf secara manual:
+• 🌊 **FloodSight**: Sistem AI & Geospasial untuk prediksi banjir JABODETABEK.
+• 🏍️ **Skripsi AST CVT**: Pemodelan Predictive Maintenance kerusakan CVT motor menggunakan Audio Spectrogram Transformer.
+• 🏅 **Riset NICYMS**: Penelitian NLP & Teori Informasi (Gold Medal Winner).
+
+Silakan coba sapa saya lagi dalam 2–3 menit, ya!`;
+
     const systemPrompt = `
     Kamu adalah Asisten AI untuk portofolio kandidat S1 Teknik Informatika UIN Sunan Gunung Djati Bandung.
     Data Kandidat:
@@ -24,7 +34,8 @@ module.exports = async function handler(req, res) {
     `;
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${GEMINI_API_KEY}`, {
+        // Perbaikan nama model: gemini-3.8-flash menjadi gemini-1.5-flash
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -40,10 +51,20 @@ module.exports = async function handler(req, res) {
             const aiResponse = data.candidates[0].content.parts[0].text;
             return res.status(200).json({ reply: aiResponse });
         } else {
-            // MENANGKAP ERROR ASLI DARI GEMINI (Misal: API Key Invalid)
+            // DETEKSI RATE LIMIT ATAU KUOTA HABIS (HTTP 429 Too Many Requests atau 503 Service Unavailable)
+            const isRateLimit = response.status === 429 || response.status === 503 || 
+                                (data.error?.message && (data.error.message.toLowerCase().includes('quota') || data.error.message.includes('429')));
+            
+            if (isRateLimit) {
+                // Mengembalikan status 200 dengan pesan fallback agar masuk ke kolom chat UI
+                return res.status(200).json({ reply: FALLBACK_RESPONSE });
+            }
+
+            // Error asli lainnya dari Gemini (misal API key salah)
             return res.status(500).json({ error: data.error?.message || 'Respon dari model AI tidak valid' });
         }
     } catch (error) {
-        return res.status(500).json({ error: error.message || 'Server gagal melakukan fetch ke Gemini' });
+        // Jika server putus koneksi atau fetch gagal, fallback response juga diaktifkan untuk keamanan
+        return res.status(200).json({ reply: FALLBACK_RESPONSE });
     }
 };
